@@ -19,7 +19,7 @@ class PDFparser:
     def parse(self, src):
         result = []
         output_string = StringIO()
-        with open(src) as in_file:
+        with open(src, 'rb') as in_file:
             parser = PDFParser(in_file)
             doc = PDFDocument(parser)
             rsrcmgr = PDFResourceManager()
