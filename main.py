@@ -27,8 +27,8 @@ class PDFparser:
             interpreter = PDFPageInterpreter(rsrcmgr, device)
             for page in PDFPage.create_pages(doc):
                 interpreter.process_page(page)
-        result = (output_string.getvalue())
-        return result
+        result = output_string.getvalue()
+        return result.split('\n\n')[:-1]
 
 
 class HTMLParser:
